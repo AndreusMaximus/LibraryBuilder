@@ -1,0 +1,8 @@
+//float/float-start
+//they all float down here
+//you'll float too
+public float float(){
+	myParent.line
+	PApplet.sq
+}
+//float-end

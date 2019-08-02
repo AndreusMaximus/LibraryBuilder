@@ -1,0 +1,55 @@
+//void/liniaal-start
+public void liniaal() {
+  strokeWeight(1);
+  stroke(0);
+  if (keyPressed && (key == 'l' || key == 'L') ) { //Druk op 'l' om de liniaal te gebruiken
+    if(lReleased){
+      if(!liniaalAan){
+       liniaalAan = true; 
+      }
+      else{
+       liniaalAan = false;   
+      } 
+      lReleased = false;  
+    }
+     
+  }
+  
+  if(liniaalAan){    
+      if (height > width) {
+        dimensie = Math.max(30, int(0.08*width));  //Breedte afhankelijk van breedte scherm, minimaal 30
+      } else {
+        dimensie = Math.max(30, int(0.08*height));
+      }
+      limitX = int(width/100)+1;
+      limitY = int(height/100)+1;
+      fill(200);
+      rect(0, 0, width, dimensie);  //Teken x-liniaal
+      fill(0);
+      for (int i = 1; i < limitX; i += 1) {  //Elke 100 pixels
+        line(100*i, 0.5*dimensie, 100*i, dimensie);  //Tekent langere lijn
+        text(100*i, 100*i+2, 0.5*dimensie);  //Schrijft x-coordinaat
+      }
+      for (int i = 1; i < limitX*10; i += 1) { //Elke 10 pixels
+        line(10*i, 0.8*dimensie, 10*i, dimensie); //Tekent kleinere lijn
+      }
+      fill(200);
+      rect(0, 0, dimensie, height);  //Idem voor y-liniaal
+      fill(0);
+      for (int i = 1; i < limitY; i += 1) {
+        line(0.5*dimensie, 100*i, dimensie, 100*i);
+        text(100*i, 0.20*dimensie-2, 100*i-3);
+      }
+      for (int i = 1; i < limitY*10; i += 1) {
+        line(0.8*dimensie, 10*i, dimensie, 10*i);
+      }
+      if (mouseY >= dimensie && mouseX >= dimensie) {  //Wanneer de muis binnen het scherm valt
+        strokeWeight(2); 
+        cursor(CROSS);  //Vervang muis door kruis
+        stroke(200, 0, 0);  //Teken rode lijn op liniaal op de coordinaten van de muis
+        line(0.5*dimensie, mouseY, dimensie, mouseY);
+        line(mouseX, 0.5*dimensie, mouseX, dimensie);
+      } else noCursor(); //Geen cursor wanneer muis op de liniaal zit
+    }else cursor(ARROW);  //Normale muis als liniaal uit staat
+}
+//liniaal-end

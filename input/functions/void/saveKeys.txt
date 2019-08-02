@@ -1,0 +1,16 @@
+void saveKeys(){
+	switch(keyCode){
+		case UP:
+			omhoog = true;
+			break;
+		case DOWN:
+			omlaag = true;
+			break;
+		case LEFT:
+			links = true;
+			break;
+		case RIGHT:
+			rechts = true;
+			break;
+	}
+}

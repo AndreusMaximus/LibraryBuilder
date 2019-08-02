@@ -1,0 +1,11 @@
+//boolean/botsingLinks-start
+public boolean botsingLinks(String graphic, int kleur, float x, float y, float breedte, float hoogte){
+  if(graphic == "rect"){  
+     return botsingCheckerRect(kleur, x, y, breedte, hoogte, "Links");
+  } 
+  else if(graphic == "ellipse"){        
+     return botsingCheckerEllipse(kleur, x, y, breedte, hoogte, "Links");
+  }
+  return false;
+}
+//botsingLinks-end

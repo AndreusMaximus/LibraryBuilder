@@ -1,0 +1,8 @@
+//char/char-start
+public char char(){
+	//aaaaaaaaaaaaaaaaaaaaaa
+	myParent.line
+	myParent.ellipse
+	Math.max
+}
+//char-end

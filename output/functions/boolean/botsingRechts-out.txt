@@ -1,0 +1,11 @@
+//boolean/botsingRechts-start
+public boolean botsingRechts(String graphic, int kleur, float x, float y, float breedte, float hoogte){
+  if(graphic == "rect"){  
+     return botsingCheckerRect(kleur, x, y, breedte, hoogte, "Rechts");
+  } 
+  else if(graphic == "ellipse"){        
+     return botsingCheckerEllipse(kleur, x, y, breedte, hoogte, "Rechts");
+  }
+  return false;
+}
+//botsingRechts-end

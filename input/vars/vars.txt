@@ -1,0 +1,4 @@
+boolean omhoog = false; // comments are allowed
+boolean omlaag = false;
+boolean links = false;
+boolean rechts = false;

@@ -1,0 +1,5 @@
+void released(){
+if( key == 'l' || key == 'L'){
+   lReleased = true;
+ }
+}

@@ -1,0 +1,19 @@
+//void/saveKeys-start
+public void saveKeys(){
+	switch(myParent.keyCode){
+		case PApplet.UP:
+			omhoog = true;
+			break;
+		case PApplet.DOWN:
+			omlaag = true;
+			break;
+		case PApplet.LEFT:
+			links = true;
+			break;
+		case PApplet.RIGHT:
+			rechts = true;
+			break;
+	}
+}
+
+//saveKeys-end

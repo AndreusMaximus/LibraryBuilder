@@ -1,0 +1,10 @@
+
+boolean botsingOnder(String graphic, color kleur, float x, float y, float breedte, float hoogte){
+  if(graphic == "rect"){ 
+     return botsingCheckerRect(kleur, x, y, breedte, hoogte, "Onder");
+  } 
+  else if(graphic == "ellipse"){        
+     return botsingCheckerEllipse(kleur, x, y, breedte, hoogte, "Onder");
+  }
+  return false;
+}

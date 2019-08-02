@@ -1,0 +1,12 @@
+//boolean/botsingBoven-start
+
+public boolean botsingBoven(String graphic, int kleur, float x, float y, float breedte, float hoogte){
+  if(graphic == "rect"){  
+     return botsingCheckerRect(kleur, x, y, breedte, hoogte, "Boven");
+  } 
+  else if(graphic == "ellipse"){        
+     return botsingCheckerEllipse(kleur, x, y, breedte, hoogte, "Boven");
+  }
+  return false;
+}
+//botsingBoven-end

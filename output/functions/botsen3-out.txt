@@ -1,0 +1,12 @@
+//botsen3-start
+
+boolean botsing(String graphic, color kleur, float x, float y, float breedte, float hoogte){
+  if(graphic == "rect"){  
+     return botsingCheckerRect(kleur, x, y, breedte, hoogte, "alles");
+  } 
+  else if(graphic == "ellipse"){        
+     return botsingCheckerEllipse(kleur, x, y, breedte, hoogte, "alles");
+  }
+  return false;
+}
+//botsen3functionName-end

@@ -1,0 +1,15 @@
+Mapstructuur dat je nodig hebt
+C:\Users\Name\Processing\Libraries
+C:\Users\Name\Processing\Libraries\Libraries
+C:\Users\Name\Processing\processing-3.5.3
+
+Dingen die geinstalleerd moeten staan
+Ant
+Java JDK
+Python
+
+dingen die niet in code mogen staan 
+int()
+cast conversies van kommagetallen moeten standaard floats worden 0.05 moet dus 0.05f worden.
+redundant (int)casts geven warnings maar zijn niet verboden
+geen casts gebruiken als je met dezelfde datatypes rekent en opslaat.

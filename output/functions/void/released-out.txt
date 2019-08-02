@@ -1,0 +1,7 @@
+//void/released-start
+public void released(){
+if( key == 'l' || key == 'L'){
+   lReleased = true;
+ }
+}
+//released-end

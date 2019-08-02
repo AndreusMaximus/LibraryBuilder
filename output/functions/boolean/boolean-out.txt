@@ -1,0 +1,7 @@
+//boolean/boolean-start
+public boolean boolean(){
+	myParent.rect
+	myParent.width
+	PApplet.UP
+}
+//boolean-end

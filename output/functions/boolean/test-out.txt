@@ -1,0 +1,5 @@
+//boolean/test-start
+public boolean test(){
+	myParent.ellipse
+}
+//test-end
