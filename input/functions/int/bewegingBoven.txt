@@ -1,0 +1,7 @@
+// Y besturing boven float
+int bewegingBoven(int snelheidVar){
+  if(KeyCodes[0] == true || Keys[0] == true){
+   return -snelheidVar;
+  }
+  return 0;
+}

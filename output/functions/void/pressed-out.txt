@@ -1,0 +1,36 @@
+//void/pressed-start
+public void pressed(){
+//pijltjes
+  if(myParent.keyCode == PApplet.UP){
+    KeyCodes[0] = true;
+  }
+  if(myParent.keyCode == PApplet.DOWN){    
+    KeyCodes[1] = true;
+  }
+  if(myParent.keyCode == PApplet.LEFT){
+    KeyCodes[2] = true;    
+  }
+  if(myParent.keyCode == PApplet.RIGHT){
+    KeyCodes[3] = true;    
+  }  
+  
+  //wsad
+  if(myParent.key == 'w'){
+    Keys[0] = true;    
+  }
+  if(myParent.key == 's'){
+    Keys[1] = true;    
+  }
+  if(myParent.key == 'a'){
+    Keys[2] = true;    
+  }
+  if(myParent.key == 'd'){
+    Keys[3] = true;    
+  }  
+  
+  //space
+  if(myParent.key == ' '){
+    Keys[4] = true;    
+  }
+}
+//pressed-end

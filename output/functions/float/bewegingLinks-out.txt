@@ -1,0 +1,10 @@
+//float/bewegingLinks-start
+
+// links besturing float
+public float bewegingLinks(float snelheidVar){
+  if(KeyCodes[2] == true || Keys[2] == true){
+   return -snelheidVar;
+  }
+  return 0;
+}
+//bewegingLinks-end

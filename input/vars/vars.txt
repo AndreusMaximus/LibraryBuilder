@@ -1,4 +1,7 @@
-boolean omhoog = false; // comments are allowed
-boolean omlaag = false;
-boolean links = false;
-boolean rechts = false;
+int dimensie = 0; //Breedte van de liniaal
+int limitX = 0;   //Lengte x-liniaal
+int limitY = 0;   //Lengte y-liniaal
+boolean liniaalAan = false;
+boolean lReleased = true;
+boolean[] Keys = new boolean[5];
+boolean[] KeyCodes = new boolean[4];

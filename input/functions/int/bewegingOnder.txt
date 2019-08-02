@@ -1,0 +1,7 @@
+//Y besturing onder int
+int bewegingOnder(int snelheidVar){
+  if(KeyCodes[1] == true || Keys[1] == true){
+   return snelheidVar;
+  }
+  return 0;
+}

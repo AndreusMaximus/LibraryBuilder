@@ -1,0 +1,9 @@
+//int/bewegingLinks-start
+// links besturing int
+public int bewegingLinks(int snelheidVar){
+  if(KeyCodes[2] == true || Keys[2] == true){
+   return -snelheidVar;
+  }
+  return 0;
+}
+//bewegingLinks-end

@@ -1,4 +1,4 @@
-boolean botsingRechts(String graphic, color kleur, float x, float y, float breedte, float hoogte){
+boolean botsingRechts(String graphic, float x, float y, float breedte, float hoogte, color kleur){
   if(graphic == "rect"){  
      return botsingCheckerRect(kleur, x, y, breedte, hoogte, "Rechts");
   } 

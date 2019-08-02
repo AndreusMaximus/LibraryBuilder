@@ -1,0 +1,34 @@
+void pressed(){
+//pijltjes
+  if(keyCode == UP){
+    KeyCodes[0] = true;
+  }
+  if(keyCode == DOWN){    
+    KeyCodes[1] = true;
+  }
+  if(keyCode == LEFT){
+    KeyCodes[2] = true;    
+  }
+  if(keyCode == RIGHT){
+    KeyCodes[3] = true;    
+  }  
+  
+  //wsad
+  if(key == 'w'){
+    Keys[0] = true;    
+  }
+  if(key == 's'){
+    Keys[1] = true;    
+  }
+  if(key == 'a'){
+    Keys[2] = true;    
+  }
+  if(key == 'd'){
+    Keys[3] = true;    
+  }  
+  
+  //space
+  if(key == ' '){
+    Keys[4] = true;    
+  }
+}

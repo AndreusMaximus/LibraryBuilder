@@ -1,7 +1,34 @@
 //void/released-start
 public void released(){
-if( key == 'l' || key == 'L'){
+if( myParent.key == 'l' || myParent.key == 'L'){
    lReleased = true;
  }
+ //pijltjes
+  if(myParent.keyCode == PApplet.UP){
+    KeyCodes[0] = false;
+  }
+  if(myParent.keyCode == PApplet.DOWN){    
+    KeyCodes[1] = false;
+  }
+  if(myParent.keyCode == PApplet.LEFT){
+    KeyCodes[2] = false;    
+  }
+  if(myParent.keyCode == PApplet.RIGHT){
+    KeyCodes[3] = false;    
+  }  
+  
+  //wsad
+  if(myParent.key == 'w'){
+    Keys[0] = false;    
+  }
+  if(myParent.key == 's'){
+    Keys[1] = false;    
+  }
+  if(myParent.key == 'a'){
+    Keys[2] = false;    
+  }
+  if(myParent.key == 'd'){
+    Keys[3] = false;    
+  } 
 }
 //released-end

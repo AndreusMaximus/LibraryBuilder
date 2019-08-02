@@ -1,6 +1,5 @@
-// Kijkt of een ellipse ergens mee botst.    
 boolean botsingCheckerEllipse(color kleur, float x, float y, float breedte, float hoogte, String kant){
-  // hoeveelheid meetpunten bepalen (iedere 5 pixels Ã©Ã©n) 
+  // hoeveelheid meetpunten bepalen (iedere 10 pixels één) 
   float meetpunten;
   if(kant == "Boven" || kant == "Onder"){
      meetpunten = breedte/5; 
@@ -9,90 +8,110 @@ boolean botsingCheckerEllipse(color kleur, float x, float y, float breedte, floa
     meetpunten = hoogte/5; 
   }
   else{
-    meetpunten = (breedte >= hoogte ? breedte : hoogte)/5;
+    meetpunten = (breedte >= hoogte ? breedte : hoogte)/8;
   }
   
-  float opteller = breedte/meetpunten; 
+  float optellerX = breedte/meetpunten;
+  float optellerY = hoogte/meetpunten; 
   float straalX = breedte/2;
   float straalY = hoogte/2;
   
-  //punt links en rechts bepalen
-  if(kant == "Links" || get((int)(x-straalX-1), (int)y) == kleur){      
-           //b.Links = true;  
-           return true;
-  }
-  if(kant == "Rechts" || get((int)(x + straalX + 1), (int)y) == kleur){             
-           //b.Rechts = true; 
-           return true;
-  }
-  /*
-  //Visualisatie van meetpunten
-  fill(0,255,0);
-  ellipse(x-straalX-1,y,5,5);
-  ellipse(x + straalX + 1,y,5,5);
-  */
   //Punten checken voor alle kanten van de ellipse 
-  for(int i = 0; i < meetpunten + 1; i+= 1){
-    float var = (-straalX) + (i*opteller);
-    float j = sqrt(sq(straalY) - sq(straalY)*sq(var)/sq(straalX));
-    float xVar;
+  for(int i = 1; i < meetpunten; i += 1){
+    float xVar = (-straalX) + (i*optellerX);
+    float yVar = (-straalY) + (i*optellerY);
+    float xPlot = sqrt(sq(straalX) - sq(straalX)*sq(yVar)/sq(straalY));
+    float yPlot = sqrt(sq(straalY) - sq(straalY)*sq(xVar)/sq(straalX));
+
+    // zet terug naar pixelcoordinaten
     if(i < meetpunten/2){
-      xVar = var + x-1;
+      xVar += x-1;      
+      yVar += y-1;
     }
     else if(meetpunten/2>6){        
-      xVar = var + x+1;
+      xVar += x+1;      
+      yVar += y+1;  
     }
     else{
-       xVar = var + x;
-    }
-    float yVarBoven = -j+y -1;
-    float yVarOnder = j+y + 1;
+      xVar += x;
+      yVar += y;
+    }    
     
-    //botsingen checken
-    if(get((int)xVar,(int)yVarBoven) == kleur){
-       //boven links/rechts is true 
-       if(yVarBoven >= y-straalY){
-         if((kant == "Boven" || kant == "Rechts" || kant == "alles") && xVar < x ){
-           //b.Boven = true;
-           //b.Links = true;             
-         return true;  
-       }
-         if((kant == "Boven" ||  kant == "Links" || kant == "alles") && xVar > x){  
-           //b.Boven = true;         
-           //b.Rechts = true;  
+    // bereken x en y coordinaten
+    float yVarBoven = -yPlot+y -1;
+    float yVarOnder = yPlot+y + 1;
+    float xVarLinks = -xPlot+x -1;
+    float xVarRechts = xPlot+x +1;
+    
+    //BOTSINGEN CHECKEN
+    {
+      if(get((int)xVar,(int)yVarBoven) == kleur){
+         //boven links/rechts is true 
+         if(yVarBoven >= y-straalY){
+           if((kant == "Boven" || kant == "Links" || kant == "alles") && xVar < x ){     
+             return true;  
+         }
+           if((kant == "Boven" ||  kant == "Rechts" || kant == "alles") && xVar > x){  
+             return true;
+           }
+         }           
+         else if (kant == "Boven"){
            return true;
          }
-       }           
-       else if (kant == "Boven"){
-         //b.Boven = true;  
-         return true;
-       }
-    }
-    if(get((int)xVar, (int)yVarOnder) == kleur){
-      //onder links/rechts is true
-      if(yVarOnder < y + straalY){
-         if((kant == "Onder" || kant == "Links" || kant == "alles") && xVar < x){     
-          // b.Onder = true;        
-          // b.Links = true;   
+      }   
+      if(get((int)xVar, (int)yVarOnder) == kleur){
+        //onder links/rechts is true
+        if(yVarOnder < y + straalY){
+           if((kant == "Onder" || kant == "Links" || kant == "alles") && xVar < x){ 
+            return true;
+           }
+           if((kant == "Onder" || kant == "Rechts" || kant == "alles") && xVar > x){  
+            return true;            
+           }
+         }
+         else if (kant == "Onder"){  
           return true;
+         }      
+      }
+      
+      if(get((int)xVarLinks,(int)yVar) == kleur){
+         //boven links/rechts is true 
+         if(xVarLinks >= x-straalX){
+           if((kant == "Links" || kant == "Boven" || kant == "alles") && yVar < y){  
+             return true;  
          }
-         if((kant == "Onder" || kant == "Rechts" || kant == "alles") && xVar > x){
-          // b.Onder = true;  
-          // b.Rechts = true; 
-          return true;            
+           if((kant == "Links" ||  kant == "Onder" || kant == "alles") && yVar > y){  
+             return true;
+           }
+         }           
+         else if (kant == "Links" || kant == "alles"){
+           return true;
          }
-       }
-       else if (kant == "Onder"){
-        // b.Onder = true;  
-        return true;
-       }      
+      }   
+      if(get((int)xVarRechts, (int)yVar) == kleur){
+        //onder links/rechts is true
+        if(xVarRechts < x + straalX){
+           if((kant == "Rechts" || kant == "Onder" || kant == "alles") && yVar < y){ 
+            return true;
+           }
+           if((kant == "Rechts" || kant == "Onder" || kant == "alles") && yVar > y){
+            return true;            
+           }
+         }
+         else if (kant == "Rechts" || kant == "alles"){
+          return true;
+         }   
+        
+      }  
+      /*
+      //Visualisatie van meetpunten
+      fill(0,255,0);
+      ellipse(xVar,yVarBoven,5,5);
+      ellipse(xVar,yVarOnder,5,5);
+      ellipse(xVarLinks,yVar,5,5);
+      ellipse(xVarRechts,yVar,5,5);  
+      */
     }
-         
-    //Visualisatie van meetpunten
-    fill(0,255,0);
-    ellipse(xVar,yVarBoven-1,5,5);
-    ellipse(xVar,yVarOnder+1,5,5);
-    
   }
   return false;
 }

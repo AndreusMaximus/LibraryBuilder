@@ -1,0 +1,9 @@
+//float/bewegingBoven-start
+// Y besturing boven float
+public float bewegingBoven(float snelheidVar){
+  if(KeyCodes[0] == true || Keys[0] == true){
+   return -snelheidVar;
+  }
+  return 0;
+}
+//bewegingBoven-end

@@ -2,4 +2,31 @@ void released(){
 if( key == 'l' || key == 'L'){
    lReleased = true;
  }
+ //pijltjes
+  if(keyCode == UP){
+    KeyCodes[0] = false;
+  }
+  if(keyCode == DOWN){    
+    KeyCodes[1] = false;
+  }
+  if(keyCode == LEFT){
+    KeyCodes[2] = false;    
+  }
+  if(keyCode == RIGHT){
+    KeyCodes[3] = false;    
+  }  
+  
+  //wsad
+  if(key == 'w'){
+    Keys[0] = false;    
+  }
+  if(key == 's'){
+    Keys[1] = false;    
+  }
+  if(key == 'a'){
+    Keys[2] = false;    
+  }
+  if(key == 'd'){
+    Keys[3] = false;    
+  } 
 }

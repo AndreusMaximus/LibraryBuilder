@@ -1,7 +1,6 @@
 //boolean/botsingCheckerRect-start
-// Kijkt of een rechthoek ergens mee botst
 public boolean botsingCheckerRect(int kleur, float x, float y, float breedte, float hoogte, String kant){
-  // hoeveelheid meetpunten bepalen (iedere 5 pixels Ã©Ã©n) 
+  // hoeveelheid meetpunten bepalen (iedere 5 pixels één) 
   float meetpunten;
   if(kant == "Boven" || kant == "Onder"){
      meetpunten = breedte/5; 
@@ -11,13 +10,12 @@ public boolean botsingCheckerRect(int kleur, float x, float y, float breedte, fl
   }
   else{
     meetpunten = (breedte >= hoogte ? breedte : hoogte)/5;
-    PApplet.print(meetpunten);
   }
   
   //punten checken voor iedere zijde van de rechthoek
   float optellerX = breedte/meetpunten;
   float optellerY = hoogte/meetpunten;    
-  for(int i = (int)0; i < meetpunten+1; i += 1){
+  for(int i = 0; i < meetpunten+1; i += 1){
     float xVar = x + (i*optellerX);
     float yVar = y + (i*optellerY);
 

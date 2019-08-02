@@ -1,0 +1,9 @@
+//int/bewegingRechts-start
+// rechts besturing int
+public int bewegingRechts(int snelheidVar){
+  if(KeyCodes[3] == true || Keys[3] == true){
+   return snelheidVar;
+  }
+  return 0;
+}
+//bewegingRechts-end

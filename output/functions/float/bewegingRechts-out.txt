@@ -1,0 +1,9 @@
+//float/bewegingRechts-start
+// rechts besturing float
+public float bewegingRechts(float snelheidVar){
+  if(KeyCodes[3] == true || Keys[3] == true){
+   return snelheidVar;
+  }
+  return 0;
+}
+//bewegingRechts-end

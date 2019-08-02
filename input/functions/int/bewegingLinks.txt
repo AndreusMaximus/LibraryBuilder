@@ -1,0 +1,7 @@
+// links besturing int
+int bewegingLinks(int snelheidVar){
+  if(KeyCodes[2] == true || Keys[2] == true){
+   return -snelheidVar;
+  }
+  return 0;
+}

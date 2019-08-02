@@ -68,11 +68,11 @@ with open("input/functionList.txt", 'r') as s:
     F.write("public class CodeLib{\n")
     
     F.write("private PApplet myParent;\n")
-    
+    F.write("public CodeLib(PApplet app){ myParent = app;}")
     v = open("input/vars/vars.txt")
     data = "//vars \n"
     for line in v:
-        data += line.replace(line, "private " + line)
+        data += line.replace(line, "public " + line)
     data += "\n"
     F.write(data)
     for line in s:

@@ -2,8 +2,8 @@ UP
 DOWN
 LEFT
 RIGHT
-CROSS(
-ARROW(
+CROSS
+ARROW
 print(
 println(
 sqrt(

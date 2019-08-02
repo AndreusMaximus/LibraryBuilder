@@ -10,8 +10,8 @@ noStroke(
 background(
 key
 mousePressed(
-width(
-height(
+width
+height
 text(
 cursor(
 mouseX

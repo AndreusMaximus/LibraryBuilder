@@ -1,6 +1,5 @@
 //boolean/botsing-start
-
-public boolean botsing(String graphic, int kleur, float x, float y, float breedte, float hoogte){
+public boolean botsing(String graphic, float x, float y, float breedte, float hoogte, int kleur){
   if(graphic == "rect"){  
      return botsingCheckerRect(kleur, x, y, breedte, hoogte, "alles");
   } 
